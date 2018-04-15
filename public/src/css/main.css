@@ -1,0 +1,280 @@
+/*-----Global-----*/
+* {
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  width: 100%;
+  background-image: url('../images/BG_01.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.body-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+h1 {
+  color: white;
+  font-size: 38px;
+}
+
+p {
+  color: #fff;
+  font-size: 16px;
+}
+
+form {
+    position: relative;
+    height: 35px;
+    margin-bottom: 5em;
+}
+
+select {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 330px;
+  height: 100%;
+  border-bottom: 0px;
+  border-radius: 3px;
+  font-size: 14px;
+  box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
+}
+
+select > option {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 1s ease-out;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    margin-top: 1em;
+}
+
+button {
+    position: absolute;
+    left: 41%;
+    border: none;
+    background: #0b0b0b;
+    color: #fff;
+    padding: 0.7em 1.4em;
+    margin: 2em 0;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+/*-----nav-----*/
+nav {
+  height: 100px;
+  line-height: 100px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a img {
+  vertical-align: middle;
+}
+
+nav a:nth-child(2) {
+  float: right;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 600;
+  font-family: cursive;
+}
+/*-----Header-----*/
+header {
+  margin: 100px 0 150px 0;
+  text-align: center;
+}
+header p {
+  width: 35%;
+  margin: 30px auto 0 auto;
+}
+
+header a {
+  color: #ff4a5e;
+  text-decoration: none;
+}
+/*-----News-----*/
+.news {
+  text-align: center;
+  width: 100%;
+}
+
+.band {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+@media (min-width: 30em) {
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 60em) {
+  .band {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px #0b0b0b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease-in;
+}
+.card:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+.card article {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+.card p {
+  flex: 1;
+  line-height: 1.4;
+}
+.card span {
+  font-size: 14px;
+  color: #444;
+  letter-spacing: 0.05em;
+  margin: 2em 0 0 0;
+}
+.card .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (min-width: 60em) {
+  .item-1 {
+    grid-column: 1 / span 2;
+  }
+  .item-1 h1 {
+    font-size: 24px;
+  }
+}
+/*-----whoAMI-----*/
+.whoami {
+  text-align: center;
+  margin: 100px 0 200px 0;
+  position: relative;
+}
+
+.whoami h1 {
+  color: #f1f1f1;
+  font-size: 34px;
+}
+
+.dev {
+  color: #25272c;
+  font-size: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  top: -70px;
+  z-index: -1;
+  font-style: italic;
+}
+/*-----Footer-----*/
+footer {
+  text-align: center;
+  margin: 60px 0;
+}
+
+footer p {
+  color: #404348;
+}
+/*-----Responsive-----*/
+
+@media only screen and (max-width: 991px) {
+  header p {
+    width: 100%;
+  }
+
+  header {
+    width: 96%;
+  }
+
+  .news a .card {
+    margin: 2%;
+    width: 96%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    width: 96%;
+    margin: 30px auto 100px auto;
+    text-align: left;
+  }
+
+  .whoami {
+    text-align: left;
+    width: 96%;
+    margin: 70px auto 100px auto;
+  }
+
+  .dev {
+    visibility: hidden;
+  }
+}

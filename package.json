@@ -1,0 +1,20 @@
+{
+  "name": "Headlines-Andela",
+  "version": "1.0.0",
+  "description": "A simple progressive web application that is used to fetch data from the newsapi.org",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1 -o --cors -p 3000"
+  },
+  "keywords": [
+    "pwa",
+    "progressive",
+    "web",
+    "app"
+  ],
+  "author": "Eze Daniel aka CED",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
