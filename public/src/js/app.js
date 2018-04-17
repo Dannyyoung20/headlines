@@ -129,6 +129,7 @@ class HeadlineNews {
       .then(response => response.json())
       .then(data => {
         if (data.status != 'ok') return;
+        noty.displayPushNotification('New posts recieved from newsapi.org')
         hn.storeDataIntoIDB(data);
       });
   }
@@ -145,6 +146,7 @@ class HeadlineNews {
       .then(response => response.json())
       .then(data => {
         if (data.status != 'ok') return;
+        noty.displayPushNotification('New posts recieved from newsapi.org')
         hn.storeDataIntoIDB(data);
       });
   }
@@ -244,6 +246,21 @@ class HeadlineNews {
     document
       .querySelector('#country-options')
       .insertAdjacentHTML('beforeend', countryOption);
+  }
+
+  /**
+   * Function for search through the sources
+   * 
+   * @param {string} query 
+   */
+  queryAllSources(query) {
+    const url = `${BASE_URL}/everything?q=${query}&apiKey=${API_KEY}`;
+    return fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (data.status != 'ok') return;
+        hn.storeDataIntoIDB(data);
+      });
   }
 }
 

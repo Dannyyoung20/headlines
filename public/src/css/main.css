@@ -96,6 +96,17 @@ button {
 button:hover {
     cursor: pointer;
 }
+
+input.field {
+  width: 330px;
+  height: 100%;
+  border-radius: 3px;
+  position: relative;
+}
+
+button.button {
+  margin: 3em 0;
+}
 /*-----nav-----*/
 nav {
   height: 100px;

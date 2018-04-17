@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,24 @@
     <meta name="theme-color" content="#3F51B5">
     <link rel="icon" href="src/images/logo.png" />
 </head>
+
 <body>
     <div class="body-wrapper">
         <nav class="clearfix">
-            <a href="#"class="logo">Headlines</a>
-            <a href="https://github.com/Dannyyong20/headlines"><img src="src/images/dribbble_icon.png" alt="Dribbble Icon" /></a>
+            <a href="#" class="logo">Headlines</a>
+            <a href="https://github.com/Dannyyong20/headlines">
+                <img src="src/images/dribbble_icon.png" alt="Dribbble Icon" />
+            </a>
         </nav>
 
         <header>
             <h1>List Of Top Headline News Sources</h1>
-            <p>Lorem ipsum est ajesn aleia js askei ajsiea ladna jcna, eioqea afas nm aie Lorem ipsum est ajesn aleia js<a href="#">mdan</a></p>
+            <p>
+                <form id="search-form">
+                    <input type="text" class="field" id="searchQuery" placeholder="Search for a product" />
+                    <button type="submit" class="button">Search</button>
+                </form>
+            </p>
         </header>
 
         <div class="form-field">
@@ -52,7 +61,8 @@
         <div class="band"></div>
         <div class="whoami">
             <h1>CED - theSilentDev</h1>
-            <h2 class="dev">DEVELOPED <br /> BY</h2>
+            <h2 class="dev">DEVELOPED
+                <br /> BY</h2>
         </div>
 
         <footer>
@@ -60,6 +70,7 @@
         </footer>
     </div>
     <script type="text/javascript" src="src/js/idb.js"></script>
+    <script type="text/javascript" src="src/js/notification.js"></script>
     <script type="text/javascript" src="src/js/app.js"></script>
     <script type="text/javascript">
         document.getElementById('sources-form').addEventListener('submit', (e) => {
@@ -73,6 +84,13 @@
             const country = e.target.querySelector("select[name='country-option']").selectedOptions[0].value;
             hn.getNewsHeadlineFromCountry(country)
         })
+
+        document.getElementById('search-form').addEventListener('submit', (e) => {
+            e.preventDefault()
+            var search_query = document.getElementById("searchQuery").value;
+            hn.queryAllSources(search_query);
+        })
     </script>
 </body>
+
 </html>
